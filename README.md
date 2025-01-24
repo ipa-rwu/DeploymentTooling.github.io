@@ -14,6 +14,12 @@ Install released version:
 
 - [From Release](docu/Installation.md#option-1-using-the-release-version-recommended)
 
+### Setup the environment and Import an example
+
+You need to first switch to ROS Developer perspective to set up an environment and then switch to Deployment perspective to import an example.
+
+- [Setup the environment](docu/Environment_setup.md)
+
 ### Models Review
 
 Deployment Tooling formalizes the deployment process using metamodels, which define roles and tasks in three key phases:
