@@ -56,6 +56,19 @@ In case you have already installed the Deployment Tooling, we recommend always p
 
 If you encounter issues during the execution of these tutorials, please report them under the following [https://github.com/ipa-rwu/DeploymentTooling.github.io/issues](https://github.com/ipa-rwu/DeploymentTooling.github.io/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=). In case you don't have a GitHub account, please just email rwu@ipa.fhg.de.
 
+#### Create an empty project
+
+First you need to switch to ROS Developer perspective.
+Then you can create a new Project to contain the examples. This can be done by pressing the icon "Add new ROS Project".
+
+![alt text](docu/images/create_new_RosProject.png)
+
+If the button doesn't work you can also create it manually using the Eclipse menu File -> New -> Other.. and searching for "Ros Model Project".
+
+![alt text](docu/images/first_project_tutorial.gif)
+
+By default, a new project with a reference to the content of the "de.fraunhofer.ipa.ros.communication.objects" will be created. This new project contains a folder called "rosnodes" to hold the nodes description and a file with the extension .ros2 which will have an error because it is empty.
+
 #### Introduction to Deployment Models
 
 Deployment Tooling organizes the deployment process into three core models:
