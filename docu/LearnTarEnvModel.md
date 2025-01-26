@@ -4,11 +4,15 @@
 
 The **Target Environment Model (TarEnvModel, `*.tarEnv`)** describes the physical setup for a deployment, including devices, their configurations, and connections. This model is essential for defining the environment where the software will run.
 
+
+When you create a new deployment project by following [Create an empty project](../README.md#create-an-empty-deployment-project), a template of `*.tarEnv` file is automatically included.
+
 ---
 
-## Example: Defining a Target Environment Model
-Once you create a new deployment project by following [Create an empty project](../README.md#create-an-empty-deployment-project),
-there is `*.tarEnv` file with following content.
+## Example: Target Environment Model Template
+
+### Default Template: `deploy_my_first_application_env.tarEnv`
+When you create a project named as "deploy_my_first_application", the `deploy_my_first_application_env.tarEnv` file has the following content:
 
 ```yaml
 TargetDeployEnviroment:
