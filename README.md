@@ -14,11 +14,31 @@ Install released version:
 
 - [From Release](docu/Installation.md#option-1-using-the-release-version-recommended)
 
-### Setup the environment and Import an example
+### Set up the environment and Import the common catalogs
 
-You need to first switch to ROS Developer perspective to set up an environment and then switch to Deployment perspective to import an example.
+You need to first switch to ROS Developer perspective to set up an environment and then switch to Deployment perspective to set up an environment.
 
-- [Setup the environment](docu/Environment_setup.md)
+- [Set up the environment](docu/Environment_setup.md)
+
+### Create a deployment project
+
+#### Pre-requirement
+Before creating a deployment project, you should already have `*.rossystem` to describe your system by using **RosTooling**.
+- [How to create a ROS project by using **RosTooling**]()
+- [How to create a `*.rossystem` to describe your system](https://ipa320.github.io/RosTooling.github.io/docu/LearnRosSystemModels.html)
+- How to create ROS component model (`*.ros2`) with **RosTooling**:
+  There are 2 ways to get ROS component model (`*.ros2`)
+  - [Describe a ROS node by using text editor](https://ipa320.github.io/RosTooling.github.io/docu/RosModelDescription.html)
+  - [Extract component models using introspection at runtime](https://ipa320.github.io/RosTooling.github.io/docu/ros2model.html)
+
+#### Create an empty deployment project
+To create a new Project which contains skeletons of models, you can press the icon “Create New Deployment Project”.
+
+![alt text](docu/images//button_create_new_proj.png)
+
+![alt text](docu/images/create_empty_deployment_proj.gif)
+By default, a new project with a reference to the content of the “de.fraunhofer.ipa.ros.communication.objects” and "de.fraunhofer.ipa.deployment.catalog.devices" will be created.
+This new project contains an empty folder called "devices" where you can add new device models, a template of "*.planros" model and a template of "*.tarEnv" model.
 
 ### Models Review
 

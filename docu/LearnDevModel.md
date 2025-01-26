@@ -2,17 +2,18 @@
 
 ## Overview
 
-The **DevModel** is a reusable representation of hardware devices used in deployment. It provides detailed specifications, communication interfaces, and operational parameters for each device type. These models form the building blocks of the **Target Environment Model** (`TarEnvModel`), enabling seamless deployment across diverse physical setups.
+The **DevModel**(`*.dev`) is a reusable representation of hardware devices used in deployment. It provides detailed specifications, communication interfaces, and operational parameters for each device type. These models form the building blocks of the **Target Environment Model** (`TarEnvModel`, `*.tarEnv`), enabling seamless deployment across diverse physical setups.
 
-This section guides you through understanding and creating **DevModel** instances using examples from the [ROS Deployment Example repository](https://github.com/ipa-rwu/ROSDeploymentExample/tree/main/ROSDeploymentExample/devices).
+This section guides you through understanding and creating **DevModel** instances using examples from the [ipa-rwu/ROSDeploymentExample](https://github.com/ipa-rwu/ROSDeploymentExample.git).
 
 ---
 
 ## Example: Defining a Device Model
 
-In this example, we define a device model for a **UR5E Robot Arm**, detailing its communication interfaces and device-specific properties.
+In this example, we define a device model for a **UR5E Robot Arm** (`ur5e.dev`), detailing its communication interfaces and device-specific properties.
+You can find this example file in the project "de.fraunhofer.ipa.deployment.catalog.devices" after you import **Device Catalog** by following [Import the device catalog](Environment_setup.md#import-the-device-catalog)
 
-### Example File: [`ur5e.dev`](https://github.com/ipa-rwu/ROSDeploymentExample/blob/main/ROSDeploymentExample/devices/ur5e.dev)
+### Example File: [`ur5e.dev`](https://github.com/ipa-rwu/DeploymentDeviceCatalog/blob/main/de.fraunhofer.ipa.deployment.catalog.devices/ur5e.dev)
 
 The `.dev` file is structured as follows:
 
@@ -64,13 +65,13 @@ Key Elements
 ## Creating Your Own Simple DevModel
 
 First you should create your own project by following
-[Create an empty project](../README.md#create-an-empty-project)
+[Create an empty project](../README.md#create-an-empty-deployment-project)
 
-You can create a folder to store all device models. Then you create a "\*.dev" file and open with "Device Editor" as shown in below:
+You create a "\*.dev" file under "devices" folder and open with "Device Editor" as shown in below:
 ![alt text](images/create_empty_dev.gif)
 
 When you edit this file you can use "Ctrl + Space" to get hint, for example:
-![alt text](images/create_my_camera_1.gif)
+![alt text](images/ctrl_space_empty_device.gif)
 
 If you would like to describe a non-computational device, then you can choose "DeviceType"
 The mandatory information of a device model for "DeviceType" is as follows:
@@ -103,4 +104,4 @@ ComputationDeviceType:
           kind: AttributeKind
 ```
 
-You can assign values to these properties in the TargetEnv model
+You can assign values to these properties in the TargetEnv model ("*.tarEnv").
