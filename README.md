@@ -34,11 +34,19 @@ Before creating a deployment project, you should already have `*.rossystem` to d
 #### Create an empty deployment project
 To create a new Project which contains skeletons of models, you can press the icon “Create New Deployment Project”.
 
-![alt text](docu/images//button_create_new_proj.png)
+![alt text](docu/images/button_create_new_proj.png)
 
 ![alt text](docu/images/create_empty_deployment_proj.gif)
 By default, a new project with a reference to the content of the “de.fraunhofer.ipa.ros.communication.objects” and "de.fraunhofer.ipa.deployment.catalog.devices" will be created.
 This new project contains an empty folder called "devices" where you can add new device models, a template of "*.planros" model and a template of "*.tarEnv" model.
+
+If you already imported "de.fraunhofer.ipa.deployment.catalog.devices" in your workspace, you will get a dialog as follows:
+
+![alt text](docu/images/create_new_project_device_catalog.png)
+
+If you reimport it you can select "OK". Same as the project “de.fraunhofer.ipa.ros.communication.objects”.
+![alt text](docu/images/create_new_project_common_objects.png)
+
 
 ### Models Review
 
