@@ -1,4 +1,4 @@
-# Hands-on Example for the Turtlesim Node <img src="images/Ros2_logo.png" alt="ROS2 Logo" width="100">
+# Hands-on Example for the Turtlesim <img src="images/Ros2_logo.png" alt="ROS2 Logo" width="100">
 
 The Turtlesim tutorial is a classic introductory exercise in learning ROS. It provides a graphical interface where a turtle can be controlled using speed commands, similar to those used in robotic bases. For more details, check out the [official Turtlesim tutorial](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html).
 
