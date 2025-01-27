@@ -1,4 +1,4 @@
-# Set up the environment and start the Eclipse application
+# Set up the tooling environment in eclipse
 
 ## Set up an environment for ROS Developer
 
