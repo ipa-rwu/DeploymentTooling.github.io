@@ -12,7 +12,6 @@ The following YAML defines the Turtlesim and teleoperation nodes:
 
 ```yaml
 turtlesim:
-  fromGitRepo: "https://github.com/ros/ros_tutorials/"
   artifacts:
     turtle_teleop_key:
       node: turtle_teleop_key
@@ -117,15 +116,25 @@ Rename the plan model to `deploy_turtlesim`. Once the model is created and passe
 
 #### Create Docker Images
 
-1. Locate `builder.docker-compose.yml` in the `deploy_turtlesim` folder.
+1. Locate `build_docker.sh` in the `deploy_turtlesim` folder.
 2. Right-click it and select **Show In Local Terminal** to open a terminal in Eclipse.
 3. Ensure you have [Docker](https://docs.docker.com/engine/install/ubuntu/) and [Docker Compose](https://docs.docker.com/compose/install/linux/) installed.
-4. Run the following command to build the Docker images:
+4. Make `build_docker.sh` executable:
+   ```
+   chmod 777 build_docker.sh
+   ```
+4. Run the bash file to build the Docker images:
    ```bash
-   docker compose -f builder.docker-compose.yml build
+   ./build_docker.sh
    ```
 
 <img src="images/turtlesim_build_docker.gif" alt="Build Docker Images" width="500">
+
+After the building process finishing, you can check docker images by running the command
+```
+docker images
+```
+<img src="images/turtlesim_show_docker_images.png" alt="Show Docker Images" width="300">
 
 ---
 
@@ -135,9 +144,9 @@ Rename the plan model to `deploy_turtlesim`. Once the model is created and passe
 2. Locate the `docker-compose.yaml` file within it.
 3. Run the following command to launch the Turtlesim application:
    ```bash
-   docker compose -f docker-compose.yaml up
+   docker compose up
    ```
+   <img src="images/turtlesim_run_docker.gif" alt="Run Docker Images" width="500">
 
----
-
-This tutorial walks you through the full deployment of a simple Turtlesim system. For any questions or issues, please refer to the [official documentation](../README.md) or reach out to the development team.
+4. Play with the turtle:
+    Using the terminal of the keyboard node you can use the arrows to send new commands to the turtle.
