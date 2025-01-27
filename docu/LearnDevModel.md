@@ -2,20 +2,19 @@
 
 ## Overview
 
-The **DevModel**(`*.dev`) is a reusable representation of hardware devices used in deployment. It provides detailed specifications, communication interfaces, and operational parameters for each device type. These models form the building blocks of the **Target Environment Model** (`TarEnvModel`, `*.tarEnv`), enabling seamless deployment across diverse physical setups.
+The **DevModel** (`*.dev`) is a reusable representation of hardware devices used in deployment. It provides detailed specifications, communication interfaces, and operational parameters for each device type. These models form the building blocks of the **Target Environment Model** (`TarEnvModel`, `*.tarEnv`), enabling seamless deployment across diverse physical setups.
 
-This section guides you through understanding and creating **DevModel** instances using examples from the [ipa-rwu/ROSDeploymentExample](https://github.com/ipa-rwu/ROSDeploymentExample.git).
+This guide explains how to understand and create **DevModel** instances using examples from the [ipa-rwu/ROSDeploymentExample](https://github.com/ipa-rwu/ROSDeploymentExample.git).
 
 ---
 
 ## Example: Defining a Device Model
 
-In this example, we define a device model for a **UR5E Robot Arm** (`ur5e.dev`), detailing its communication interfaces and device-specific properties.
-You can find this example file in the project "de.fraunhofer.ipa.deployment.catalog.devices" after you import **Device Catalog** by following [Import the device catalog](Environment_setup.md#import-the-device-catalog)
+Here is an example of a device model for a **UR5E Robot Arm** (`ur5e.dev`). This model includes details about communication interfaces and device-specific properties.
+
+You can find this example file in the project `de.fraunhofer.ipa.deployment.catalog.devices` after importing the **Device Catalog**. See [Import the Device Catalog](Environment_setup.md#import-the-device-catalog).
 
 ### Example File: [`ur5e.dev`](https://github.com/ipa-rwu/DeploymentDeviceCatalog/blob/main/de.fraunhofer.ipa.deployment.catalog.devices/ur5e.dev)
-
-The `.dev` file is structured as follows:
 
 ```yaml
 DeviceType:
@@ -55,41 +54,55 @@ DeviceType:
           kind: SelectionKind
 ```
 
-Key Elements
+---
 
-- Name: A unique identifier for the device (e.g., UR5E).
-- Type: The category of the device (e.g., RobotManipulator).
-- Communication: Defines the communication type (e.g., Ethernet) and protocol (e.g., TCP/IP).
-- Properties: Lists specific attributes of the device.
+### Key Elements of the Example
 
-## Creating Your Own Simple DevModel
+- **name**: A unique identifier for the device (e.g., `UR5E`).
+- **deviceResource**: Describes the resources available for the device, such as `DeviceInformation`.
+- **communicationConnection**: Defines communication interfaces (e.g., Ethernet, IO) and their properties (e.g., IP address, interface name).
 
-First you should create your own project by following
-[Create an empty project](../README.md#create-an-empty-deployment-project)
+---
 
-You create a "\*.dev" file under "devices" folder and open with "Device Editor" as shown in below:
-![alt text](images/create_empty_dev.gif)
+## Creating Your Own DevModel
 
-When you edit this file you can use "Ctrl + Space" to get hint, for example:
-![alt text](images/ctrl_space_empty_device.gif)
+### Step 1: Create an Empty DevModel
 
-If you would like to describe a non-computational device, then you can choose "DeviceType"
-The mandatory information of a device model for "DeviceType" is as follows:
+1. Create a new deployment project by following [Create an empty project](../README.md#create-an-empty-deployment-project).
+2. In the `devices` folder of the project, create a `*.dev` file.
+3. Open the file with the **Device Editor**:
+
+   ![Create Empty DevModel](images/create_empty_dev.gif)
+
+---
+
+### Step 2: Use Autocomplete for Assistance
+
+- Use `Ctrl + Space` while editing the file to see hints and suggestions:
+
+   ![Autocomplete Example](images/ctrl_space_empty_device.gif)
+
+---
+
+### Step 3: Mandatory Information
+
+#### For Non-Computational Devices
+Use `DeviceType` to describe non-computational devices:
 
 ```yaml
 DeviceType:
   name: "Name of Device Type"
 ```
 
-If you would like to describe a computational device, then you can choose "ComputationDeviceType"
-The mandatory information of a device model for "ComputationDeviceType" is as follows:
+#### For Computational Devices
+Use `ComputationDeviceType` for devices with computational capabilities:
 
 ```yaml
 ComputationDeviceType:
   name: SimplePC
-  computationResouce:
+  computationResource:
     - name: os
-      type: LinuxOpertingSystem
+      type: LinuxOperatingSystem
       properties:
         - name: os_name
           kind: AttributeKind
@@ -104,4 +117,8 @@ ComputationDeviceType:
           kind: AttributeKind
 ```
 
-You can assign values to these properties in the TargetEnv model ("*.tarEnv").
+---
+
+### Assigning Values in the Target Environment Model
+
+The properties defined in the `*.dev` file can be assigned values in the **Target Environment Model** (`*.tarEnv`). This allows you to customize device configurations for specific deployments.

@@ -1,50 +1,80 @@
-# Set up the tooling environment in eclipse
+# Set Up the Tooling Environment in Eclipse
 
-## Set up an environment for ROS Developer
+## Setting Up the Environment for ROS Development
 
-### Switch to the ROS Developer perspective
+### Step 1: Switch to the ROS Developer Perspective
 
-Go to Menu Window -> Perspective -> Open Perspective -> Other... -> ROS developer. Your application toolbar will be automatically configured.
+1. Open the menu: `Window > Perspective > Open Perspective > Other...`
+2. Select `ROS Developer`.
+3. Your application toolbar will automatically configure itself for ROS development.
 
-### Import the common communication objects project
+---
 
-If you have internet a button can clone from GitHub the objects to your workspace and import them automatically:
+### Step 2: Import the Common Communication Objects Project
 
-![alt text](images/clone_and_import.png)
+1. If you have an internet connection, use the one-click button to clone the objects from GitHub and automatically import them into your workspace:
 
-![](images/Attention.png) This button will only work on Linux machines. A
+   ![Clone and Import](images/clone_and_import.png)
 
-lternatively, you can clone manually the [repository](https://github.com/ipa320/RosCommonObjects) and import the project by File -> Import -> General -> Existing Projects into Workspace. Then select the container folder of the cloned repository.
+   > **Note**: This button is only available on Linux machines.
 
-### Import the catalog of software components
+2. Alternatively, manually clone the repository:
+   [ipa320/RosCommonObjects](https://github.com/ipa320/RosCommonObjects).
+   - Open Eclipse and navigate to `File > Import > General > Existing Projects into Workspace`.
+   - Select the folder containing the cloned repository and import it.
 
-Also, you can download and import a pre-existing catalog of examples. The catalog is publicly available on GitHub [ipa-nhg/RosModelsCatalog](https://github.com/ipa-nhg/RosModelsCatalog).
+---
 
-Please clone the repository and import it to your Eclipse workspace. This can be easily done by File -> Import -> General -> Existing Projects into Workspace. Then select the container folder of the cloned repository.
+### Step 3: Import the Catalog of Software Components
 
-![alt text](images/01_mobile_base_b.gif)
+1. Download and import the pre-existing catalog of examples from GitHub:
+   [ipa-nhg/RosModelsCatalog](https://github.com/ipa-nhg/RosModelsCatalog).
+2. Clone the repository manually and import it into Eclipse:
+   - Go to `File > Import > General > Existing Projects into Workspace`.
+   - Select the folder containing the cloned repository.
 
-## Set up an environment for Deployment Developer
+   ![Import Catalog](images/01_mobile_base_b.gif)
 
-Go to Menu Window -> Perspective -> Open Perspective -> Other... -> ROS Deployment. Your application toolbar will be automatically configured.
-![alt text](images/deployment_perspective.png)
+---
 
-### Import the device catalog
+## Setting Up the Environment for Deployment Development
 
-This catalog includes some common device models. It is publicly available on GitHub [ipa-rwu/DeploymentDeviceCatalog](https://github.com/ipa-rwu/DeploymentDeviceCatalog).
+### Step 1: Switch to the ROS Deployment Perspective
 
-If you have internet a button can clone from GitHub the objects to your workspace and import them automatically:
+1. Open the menu: `Window > Perspective > Open Perspective > Other...`
+2. Select `ROS Deployment`.
+3. Your application toolbar will automatically configure itself for deployment development.
 
-![alt text](images/button_import_devices.png)
+   ![Deployment Perspective](images/deployment_perspective.png)
 
-![](images/Attention.png) This button will only work on Linux machines. Alternatively, you can clone manually the [repository](https://github.com/ipa-rwu/DeploymentDeviceCatalog) and import the project by File -> Import -> General -> Existing Projects into Workspace. Then select the container folder of the cloned repository.
+---
 
-### Import an example
+### Step 2: Import the Device Catalog
 
-You can also import an example. The example is publicly available on GitHub [ipa-rwu/ROSDeploymentExample](https://github.com/ipa-rwu/ROSDeploymentExample.git).
+1. This catalog includes commonly used device models and is available on GitHub:
+   [ipa-rwu/DeploymentDeviceCatalog](https://github.com/ipa-rwu/DeploymentDeviceCatalog).
+2. If you have an internet connection, use the one-click button to clone and import the catalog into your workspace:
 
-If you have internet a button can clone from GitHub the objects to your workspace and import them automatically:
+   ![Import Devices](images/button_import_devices.png)
 
-![alt text](images/button_import_example.png)
+   > **Note**: This button is only available on Linux machines.
 
-![](images/Attention.png) This button will only work on Linux machines. Alternatively, you can clone manually the [repository](https://github.com/ipa-rwu/ROSDeploymentExample) and import the project by File -> Import -> General -> Existing Projects into Workspace. Then select the container folder of the cloned repository.
+3. Alternatively, manually clone the repository:
+   - Navigate to [ipa-rwu/DeploymentDeviceCatalog](https://github.com/ipa-rwu/DeploymentDeviceCatalog).
+   - Import it into Eclipse using `File > Import > General > Existing Projects into Workspace`.
+
+---
+
+### Step 3 (Optional): Import an Example Project
+
+1. Import an example project from GitHub:
+   [ipa-rwu/ROSDeploymentExample](https://github.com/ipa-rwu/ROSDeploymentExample.git).
+2. If you have an internet connection, use the one-click button to clone and import the example project:
+
+   ![Import Example](images/button_import_example.png)
+
+   > **Note**: This button is only available on Linux machines.
+
+3. Alternatively, manually clone the repository:
+   - Navigate to [ipa-rwu/ROSDeploymentExample](https://github.com/ipa-rwu/ROSDeploymentExample).
+   - Import it into Eclipse using `File > Import > General > Existing Projects into Workspace`.
