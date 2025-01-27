@@ -144,6 +144,9 @@ docker images
 2. Locate the `docker-compose.yaml` file within it.
 3. Run the following command to launch the Turtlesim application:
    ```bash
+   xhost +
+   ```
+   ```bash
    docker compose up
    ```
    <img src="images/turtlesim_run_docker.gif" alt="Run Docker Images" width="500">
@@ -151,5 +154,8 @@ docker images
 4. Play with the turtle:
     Using the terminal of the keyboard node you can use the arrows to send new commands to the turtle.
 
+    <img src="images/turtlesim_play.gif" alt="Run Docker Images" width="500">
+
+
 ---
-You can find this example (ipa-rwu/deployment_use_case_turtlesim)[https://github.com/ipa-rwu/deployment_use_case_turtlesim]
+You can find this example [ipa-rwu/deployment_use_case_turtlesim](https://github.com/ipa-rwu/deployment_use_case_turtlesim)

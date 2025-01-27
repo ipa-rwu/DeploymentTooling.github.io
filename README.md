@@ -104,7 +104,7 @@ To ensure you're using the latest version, go to **Help** → **Check for Update
 ## Real Use Cases
 
 - [Turtlesim](docu/UseCase-turtlesim.md)
-- [Pick-and-Place Application](docu/UseCase-pickplace.md): Demonstrates deployment for a UR5E manipulator setup.
+- WP[Pick-and-Place Application](docu/UseCase-pickplace.md): Demonstrates deployment for a UR5E manipulator setup.
 
 ---
 
