@@ -150,3 +150,6 @@ docker images
 
 4. Play with the turtle:
     Using the terminal of the keyboard node you can use the arrows to send new commands to the turtle.
+
+---
+You can find this example (ipa-rwu/deployment_use_case_turtlesim)[https://github.com/ipa-rwu/deployment_use_case_turtlesim]
