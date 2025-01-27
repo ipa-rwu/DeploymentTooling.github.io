@@ -1,29 +1,31 @@
-# Hands-on example for the Turtlesim node [![](images/Ros2_logo.png)]
+# Hands-on Example for the Turtlesim Node <img src="images/Ros2_logo.png" alt="ROS2 Logo" width="100">
 
-To learn ROS one of the first tutorials that everyone does is turtlesim.
+The Turtlesim tutorial is a classic introductory exercise in learning ROS. It provides a graphical interface where a turtle can be controlled using speed commands, similar to those used in robotic bases. For more details, check out the [official Turtlesim tutorial](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html).
 
-Basically, it is a small graphical interface where a turtle can be moved using the speed commands of any robotic base in ROS. [Official TurtleSim tutorial](https://docs.ros.org/en/foxy/Tutorials/Beginner-CLI-Tools/Introducing-Turtlesim/Introducing-Turtlesim.html)
+This example demonstrates deploying a system that includes two nodes: the Turtlesim node and the teleoperation node. The ROS models for these nodes are as follows:
 
-We will use it as an example to show the models.
-Let's imagine that we want to deploy a system including two nodes, one of them is the turtlesim and the other is the node to teleoperate it.
+---
 
-The ROS models (turtlesim.ros2) for these two nodes as follows:
+## ROS Models (`turtlesim.ros2`)
+
+The following YAML defines the Turtlesim and teleoperation nodes:
+
 ```yaml
 turtlesim:
   fromGitRepo: "https://github.com/ros/ros_tutorials/"
   artifacts:
     turtle_teleop_key:
-        node: turtle_teleop_key
-        publishers:
-          cmd_vel:
-            type: "geometry_msgs/msg/Twist"
-        parameters:
-          scale_angular:
-            type: Double
-            default: 2.0
-          scale_linear:
-            type: Double
-            default: 2.0
+      node: turtle_teleop_key
+      publishers:
+        cmd_vel:
+          type: "geometry_msgs/msg/Twist"
+      parameters:
+        scale_angular:
+          type: Double
+          default: 2.0
+        scale_linear:
+          type: Double
+          default: 2.0
     turtlesim_node:
       node: turtlesim_node
       publishers:
@@ -38,20 +40,25 @@ turtlesim:
         teleport_absolute:
           type: "turtlesim/srv/TeleportAbsolute"
         spawn:
-          type: 'turtlesim/srv/Spawn'
+          type: "turtlesim/srv/Spawn"
         set_pen:
-          type: 'turtlesim/srv/SetPen'
+          type: "turtlesim/srv/SetPen"
         reset:
           type: "std_srvs/srv/Empty"
         kill:
-          type: 'turtlesim/srv/Kill'
+          type: "turtlesim/srv/Kill"
         teleport_relative:
-          type: 'turtlesim/srv/TeleportRelative'
+          type: "turtlesim/srv/TeleportRelative"
         clear:
-          type: 'std_srvs/srv/Empty'
+          type: "std_srvs/srv/Empty"
 ```
 
-The system can be represented in "turtlesim.rossystem" as follows:
+---
+
+## System Model (`turtlesim.rossystem`)
+
+The following YAML represents the system model for the two nodes:
+
 ```yaml
 turtlesim_system:
   nodes:
@@ -64,27 +71,73 @@ turtlesim_system:
       interfaces:
         - cmd_publisher: pub-> "turtle_teleop_key::cmd_vel"
   connections:
-   -[ cmd_publisher , cmd_subscriber]
+    - [cmd_publisher, cmd_subscriber]
 ```
 
-If you want to know how to create ROS models, you can check links here:
-[How to create the component model (*.ros2) and the system model (*.rossystem)](../README.md#pre-requirement)
+If you are unfamiliar with creating ROS models, refer to:
+[How to create the component model (*.ros2) and system model (*.rossystem)](../README.md#pre-requirement)
 
-## Step 1: Create a new project
-To learn how to create a project you can follow the section "[Create an empty deployment project](../README.md#create-a-deployment-project)"
+---
 
-We create a project named as "turtlesim" as shown below.
+## Step-by-Step Guide
 
-![alt text](images/turtlesim_empty_project.png)
+### Step 1: Create a New Project
 
-## Step 2: Create software component models (*.ros2) and a system model (*.rossystem)
+Follow the instructions in "[Create an empty deployment project](../README.md#create-a-deployment-project)" to create a project named `turtlesim`.
 
-![alt text](images/turtlesim_ros_models.gif)
+<img src="images/turtlesim_empty_project.png" alt="Turtlesim Project" width="400">
 
-## Step 3: Update the Target Environment Model (`turtlesim.tarEnv`)
-We updated the name of computation device.
-If you want to check a reference model such as `refDeviceType: PC`, you can hold the key "CTRL", move your mouse to `PC` and then click it. It will jump to the referenced model.
+---
 
-![alt text](images/turtlesim_tarenv_model.gif)
+### Step 2: Create Software Component Models (`*.ros2`) and System Model (`*.rossystem`)
 
-## Step 4: Update the Plan Model (`turtlesim.planros`)
+<img src="images/turtlesim_ros_models.gif" alt="Turtlesim Models" width="500">
+
+After creating the system model, the **RosTooling** generator will automatically run if there are no errors. A `src-gen` folder will appear in your project, containing the generated files.
+
+---
+
+### Step 3: Update the Target Environment Model (`turtlesim.tarEnv`)
+
+Update the computation device name in the target environment model. To reference a model such as `refDeviceType: PC`, hold the **CTRL** key, hover over `PC`, and click to jump to the referenced model.
+
+<img src="images/turtlesim_tarenv_model.gif" alt="Turtlesim Target Environment" width="500">
+
+---
+
+### Step 4: Update the Plan Model (`turtlesim.planros`)
+
+Rename the plan model to `deploy_turtlesim`. Once the model is created and passes all validation checks, a folder named `deploy_turtlesim` will be generated in the `src-gen` folder. This folder contains the deployment artifacts.
+
+<img src="images/turtlesim_planros_model.gif" alt="Turtlesim Plan Model" width="500">
+
+---
+
+### Step 5: Use Deployment Artifacts
+
+#### Create Docker Images
+
+1. Locate `builder.docker-compose.yml` in the `deploy_turtlesim` folder.
+2. Right-click it and select **Show In Local Terminal** to open a terminal in Eclipse.
+3. Ensure you have [Docker](https://docs.docker.com/engine/install/ubuntu/) and [Docker Compose](https://docs.docker.com/compose/install/linux/) installed.
+4. Run the following command to build the Docker images:
+   ```bash
+   docker compose -f builder.docker-compose.yml build
+   ```
+
+<img src="images/turtlesim_build_docker.gif" alt="Build Docker Images" width="500">
+
+---
+
+#### Launch the System in a Docker Container
+
+1. Find the folder named after your computation device in the `deploy_turtlesim` folder.
+2. Locate the `docker-compose.yaml` file within it.
+3. Run the following command to launch the Turtlesim application:
+   ```bash
+   docker compose -f docker-compose.yaml up
+   ```
+
+---
+
+This tutorial walks you through the full deployment of a simple Turtlesim system. For any questions or issues, please refer to the [official documentation](../README.md) or reach out to the development team.
