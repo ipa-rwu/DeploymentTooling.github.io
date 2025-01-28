@@ -13,13 +13,17 @@ The `dhelp` package is used by the generator to check if the ROS packages requir
     git clone https://github.com/ipa-rwu/dhelp.git
     ```
 
-2. Navigate to the `dhelp` folder and run the installation script:
+2. Ensure the `venv` Module is Installed
+    ```
+    sudo apt install python3-venv
+    ```
+3. Navigate to the `dhelp` folder and run the installation script:
     ```bash
     ./install.sh
     ```
     This will create a folder named `venv`, which is a virtual environment for the Python installation. The `dhelp` package will be installed here.
 
-3. Add the `venv/bin` directory to your `PATH` environment variable:
+4. Add the `venv/bin` directory to your `PATH` environment variable:
     ```bash
     echo 'export PATH="<full_path_to_venv>/bin":$PATH' >> ~/.bashrc
     # Example:

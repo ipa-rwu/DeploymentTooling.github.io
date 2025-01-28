@@ -20,7 +20,7 @@ The [source code](https://github.com/ipa-rwu/deployment_plan_metamodel) of the t
 
 To install the released version:
 
-- [Follow the instructions here](docu/Installation.md#option-1-using-the-release-version-recommended).
+- [Follow the instructions here](docu/Installation.md).
 
 ---
 
