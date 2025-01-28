@@ -45,7 +45,7 @@ sudo apt-get install openjdk-21-jre
 
 ### Installing Eclipse
 
-1. Download the Eclipse installer from the [official Eclipse website](https://www.eclipse.org/downloads/packages/release/2024-09/r).
+1. Download the Eclipse installer (version: **2024-09**) from the [official Eclipse website](https://www.eclipse.org/downloads/packages/release/2024-09/r).
 2. Unpack the downloaded file and run the installer:
     ```bash
     ./eclipse-inst
